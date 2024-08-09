@@ -1,0 +1,172 @@
+﻿@model List<DepartmentVM>
+
+<div class="hrsync-departments-container p-1">
+    <div class="row">
+        <div class="col-12 p-1">
+            <div class="card p-3 m-0">
+                <h3>Departments</h3>
+            </div>
+        </div>
+        <div class="col-12 p-1">
+            <div class="card p-3 m-0 data-card-load">
+                <div class="text-end mb-5">
+                    <button class="btn btn-primary" id="jq-add-new-department-btn-id">Add new Department</button>
+                </div>
+                <div class="col-md-12">
+                    <table class="table table-responsive" id="jq-department-table-id">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Department</th>
+                                <th>Description</th>
+                                <th>Created On</th>
+                                <th>Updated On</th>
+                                <th style="max-width:80px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="data-tbody-load">
+                            @if (Model.Any())
+                            {
+                                foreach (var d in Model)
+                                {
+                                    <tr>
+                                        <td>@d.DepartmentId</td>
+                                        <td>@d.Name</td>
+                                        <td>@d.Description</td>
+                                        <td>@d.AddedDate.ToShortDateString()</td>
+                                        <td>@d.UpdatedDate.ToShortDateString()</td>
+                                        <td>
+                                            <div class="btn-group btn-group-sm d-flex align-items-center justify-content-center" style="max-width:80px;">
+                                                <button class="btn btn-primary jq-department-edit-btn" data-edit-id="@d.DepartmentId"><i class="fa fa-pencil"></i></button>
+                                                <button type="button" class="btn btn-danger jq-department-delete-btn" data-delete-id="@d.DepartmentId"><i class="fa fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="6" class="text-center">
+                                        <div class="alert alert-danger">
+                                            No record found !
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+   </div>
+
+
+@section scripts {
+
+    @if (Model.Any())
+    {
+        <script>
+            (function () {
+                $("#jq-department-table-id").DataTable({
+                    layout: {
+                        topStart: {
+                            buttons: ['excelHtml5', 'pdfHtml5']
+                        }
+                    }
+                });
+            })();
+        </script>
+    }
+
+    <script>
+        (function () {
+
+            /**
+             * 
+             */
+            $('#jq-add-new-department-btn-id').click(function () {
+                var url = '@Url.Action("AddDepartment", "Admin")';
+                OpenModal(url, "Add new department", "Save", "btn-success");
+            });
+
+            /**
+             *
+             */
+            $('.jq-department-edit-btn').click(function () {
+                var depId   = $(this).attr("data-edit-id");
+                var baseUrl = '@Url.Action("UpdateDepartment", "Admin")';
+                var url     = baseUrl + '?id=' + depId;
+
+                OpenModal(url, "Update department", "Update", "btn-primary");
+            });
+
+            /**
+             *
+             */
+            $('.jq-department-delete-btn').click(function () {
+                var depId   = $(this).attr("data-delete-id");
+                var baseUrl = '@Url.Action("DeleteDepartment", "Admin")';
+                var url     = baseUrl + '?id=' + depId;
+
+                OpenModal(url, "Delete department", "Delete", "btn-danger");
+            });
+
+            /**
+             *
+             */
+            $('.btn-modal-submit').click(function () {
+
+                var popUp = $(this).closest('.modal');
+                var form  = popUp.find('.modal-body form');
+
+                var loading = `<tr>
+                                    <td colspan="6">
+                                         <div class="d-flex align-items-center justify-content-center gap-2">
+                                              <div class="spinner-border text-primary my-3" role="status"></div>
+                                               <p class="fs-5 m-0">Loading...</p>
+                                         </div>
+                                    </td>
+                                </tr>`;
+                                
+                $.ajax({
+                    url: form.attr("action"),
+                    type: "POST",
+                    data: form.serialize(),
+                    success: function(response){
+                        if (response.success){
+                            popUp.modal('hide');
+                            toastr.success(response.message);
+                            $('.data-tbody-load').html(loading);
+
+                            setTimeout(function () {
+                                location.reload();
+                            }, 3000)
+                        }
+                        else
+                            toastr.error(response.message);
+                    },
+                    error: function () {
+                        toastr.error("Something went wrong!");
+                    }
+                });
+            });
+
+
+            // Function to Open the Pop-up modal
+            function OpenModal(url, title, btnText, btnClass) {
+
+                $.get(url, function (data) {
+                    $('#jq-pop-up-modal .modal-body').html(data);
+                    $('#jq-pop-up-modal .modal-title').text(title);
+                    $('#jq-pop-up-modal .btn-modal-submit').text(btnText);
+                    $('#jq-pop-up-modal .btn-modal-submit').removeClass().addClass("btn " + btnClass);
+                    $('#jq-pop-up-modal').modal("show");
+                });
+            };
+
+        })();
+    </script>
+}

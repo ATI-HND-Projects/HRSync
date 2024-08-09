@@ -1,0 +1,6 @@
+﻿@model UserRoleVM 
+
+<form asp-controller="Admin" asp-action="DeleteUserRole" method="post">
+    <input asp-for="RoleId" type="hidden" />
+    <p>Are you sure you want to delete @Model.Role UserRole ?</p>
+</form>

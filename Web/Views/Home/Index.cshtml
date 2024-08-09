@@ -1,0 +1,165 @@
+﻿
+<div class="main-dashboard-container px-2">
+    <div class="row">
+        <div class="col-12 col-md-7 p-1">
+            <div class="card h-100">
+                <div class="row">
+                    <div class="col-12 col-md-7">
+                        <div class="p-4 m-1">
+                            <h3 class="text-primary">Welcome Back, Admin</h3>
+                            <p class="m-0 text-black-50">
+                                Here you can manage all your HR related details
+                            </p>                            
+                            <p class="mt-1 text-muted">@DateTime.Now.ToString("dd MMM yyyy hh:mm tt")</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-5 d-flex justify-content-end align-items-center p-4">
+                        <img src="~/img/site-dashbord-welcome-img.jpg" class="img-fluid w-100" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-5">
+            <div class="row h-100">
+                <div class="col-12 col-md-6 p-1 h-50">
+                    <div class="card p-4 h-100">
+                        <p class="text-secondary">Pending Employees</p>
+                        <div class="mt-2 d-flex gap-3 align-items-center">
+                            <h2 class="m-0 fw-bold text-secondary">10</h2>
+                            <p class="m-0 text-success fw-bold">10% <i class="fa-solid fa-chart-simple"></i></p>
+                        </div>
+                        <div class="w-100 text-end">
+                            <a href="#">More info <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 p-1 h-50">
+                    <div class="card p-4 h-100">
+                        <p class="text-secondary">Total Leave Requests</p>
+                        <div class="mt-2 d-flex gap-3 align-items-center">
+                            <h2 class="m-0 fw-bold text-secondary">11</h2>
+                            <p class="m-0 text-success fw-bold">8% <i class="fa-solid fa-chart-simple"></i></p>
+                        </div>
+                        <div class="w-100 text-end">
+                            <a href="#">More info <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 p-1 h-50">
+                    <div class="card p-4 h-100">
+                        <p class="text-secondary">Total Applications</p>
+                        <div class="mt-2 d-flex gap-3 align-items-center">
+                            <h2 class="m-0 fw-bold text-secondary">5</h2>
+                            <p class="m-0 text-success fw-bold">1% <i class="fa-solid fa-chart-simple"></i></p>
+                        </div>
+                        <div class="w-100 text-end">
+                            <a href="#">More info <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 p-1 h-50">
+                    <div class="card p-4 h-100">
+                        <p class="text-secondary">Pending Employees</p>
+                        <div class="mt-2 d-flex gap-3 align-items-center">
+                            <h2 class="m-0 fw-bold text-secondary">14</h2>
+                            <p class="m-0 text-success fw-bold">14% <i class="fa-solid fa-chart-simple"></i></p>
+                        </div>
+                        <div class="w-100 text-end">
+                            <a href="#">More info <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 p-1">
+            <div class="card p-3 h-100">
+                <h5 class="text-secondary">Recent Leave Requests</h5>
+                <div class="col-12 col-md-12 p-1 h-100">
+                    <div class="col-12 col-md-12 p-1 h-25">
+                        <p style="display:inline-block;" class="col-12 col-md-12 p-1 h-25 text-muted">
+                            <img src="~/img/site-dashbord-welcome-img.jpg" width="25px" height="25px" class="rounded-circle">
+                            Name <br/> mail
+                            <i class="fa-solid fa-chevron-right d-flex justify-content-end"></i>
+                         </p>
+                    </div>
+                    <div class="col-12 col-md-12 p-1 h-25">
+                        <p style="display:inline-block;" class="col-12 col-md-12 p-1 h-25 text-muted">
+                            <img src="~/img/site-dashbord-welcome-img.jpg" width="25px" height="25px" class="rounded-circle">
+                            Name <br /> mail
+                            <i class="fa-solid fa-chevron-right d-flex justify-content-end"></i>
+                         </p>
+                    </div>
+                    <div class="col-12 col-md-12 p-1 h-25">
+                        <p style="display:inline-block;" class="col-12 col-md-12 p-1 h-25 text-muted">
+                            <img src="~/img/site-dashbord-welcome-img.jpg" width="25px" height="25px" class="rounded-circle">
+                            Name <br /> mail
+                            <i class="fa-solid fa-chevron-right d-flex justify-content-end"></i>
+                        </p>
+                    </div>
+                </div>
+             </div>
+         </div>
+        <div class="col-12 col-md-4 p-1">
+            <div class="card p-3 h-100">
+                <p class="text-secondary">Employee Statistics</p>
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="w-75">
+                        <canvas id="jq-employee-stats-chart-id"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 p-1">
+            <div class="card p-3 h-100">
+                <p class="text-secondary">Inquiry</p>
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="w-75">
+                        <canvas id="jq-inquries-stats-chart-id"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const employeeChart = document.getElementById('jq-employee-stats-chart-id');
+    const inquiryChart  = document.getElementById('jq-inquries-stats-chart-id');
+
+    new Chart(employeeChart, {
+        type: 'doughnut',
+        data: {
+            labels: ['Pending', 'Approved', 'Rejected'],
+            datasets: [{
+                label: 'Leave Requests',
+                data: [12, 5, 3],
+                borderWidth: 2,
+                backgroundColor: [
+                    '#2dd4bf',
+                    '#0f766e',
+                    '#134e4a'
+                ],
+                hoverOffset: 4
+            }]
+        }
+    });
+
+    new Chart(inquiryChart, {
+        type: 'doughnut',
+        data: {
+            labels: ['Pending', 'Approved', 'Declined'],
+            datasets: [{
+                label: 'Leave Requests',
+                data: [12, 5, 7],
+                borderWidth: 2,
+                backgroundColor: [
+                    '#508D4E',
+                    '#365E32',
+                    '#088395'
+                ],
+                hoverOffset: 4
+            }]
+        }
+    });
+</script>
+
