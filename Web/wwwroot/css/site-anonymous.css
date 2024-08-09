@@ -1,0 +1,17 @@
+﻿body {
+    font-family: 'Inter', sans-serif;
+    background-color: rgb(27, 68, 68);
+}
+
+.card-title {
+    font-size: xx-large;
+    color: #2e866d;
+}
+
+.fs-8rem {
+    font-size: .8rem;
+}
+
+.anonymous-card {
+    width: 70%;
+}

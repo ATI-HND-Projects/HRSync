@@ -18,6 +18,12 @@ namespace Web.Controllers
             return View();
         }
 
+        public IActionResult Employee()
+        {
+            return RedirectToAction("Privacy");
+        }
+
+
         public IActionResult Privacy()
         {
             return View();

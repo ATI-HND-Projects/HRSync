@@ -1,0 +1,59 @@
+﻿@model RegisterVM
+
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+    <div class="card anonymous-card px-4 py-5 d-flex justify-content-center align-items-center">
+        <div class="row">
+            <div class="col-12 col-md-6 p-4 d-flex justify-content-center align-items-center">
+                <img src="~/img/Register-page-img.png" class="img-fluid w-100">
+            </div>
+            <div class="col-12 col-md-6 p-4 d-flex justify-content-center align-items-center">
+                <div class="flex-fill">
+                    <h5 class="card-title">Register</h5>
+                    <form method="post">
+                        <div class="form-group mt-3">
+                            <label asp-for="FirstName" class="form-label">First Name</label>
+                            <input asp-for="FirstName" type="text" class="form-control" id="username" placeholder="Enter firts name">
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+
+                        </div>
+                        <div class="form-group mt-3">
+                            <label asp-for="LastName" class="form-label">Last Name</label>
+                            <input asp-for="LastName" type="text" class="form-control" id="username" placeholder="Enter last name">
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+
+                        </div>
+                        <div class="form-group mt-3">
+                            <label asp-for="Email">Email</label>
+                            <input asp-for="Email" type="email" class="form-control" id="username" placeholder="Enter email address">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+
+                        </div>
+                        <div class="form-group mt-3">
+                            <label asp-for="Password">Password</label>
+                            <input asp-for="Password" type="password" class="form-control" id="password" placeholder="Enter password">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+
+                        </div>
+                        <div class="form-group mt-3 mb-1">
+                            <label asp-for="ConfirmPassword">Confirm Password</label>
+                            <input asp-for="ConfirmPassword" type="password" class="form-control" id="password" placeholder="Enter confirm password">
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+                        <div>
+                            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                        </div>
+                        <div>
+                            <button id="login-submit" type="submit" class="btn btn-primary mt-3 w-100">Register</button>
+                        </div>
+                        <div>
+                            <p class="m-0 text-muted fs-8rem mt-2">
+                                Already have an account?
+                                <a asp-action="Login" class="text-decoration-none" asp-action="Login">Click here</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

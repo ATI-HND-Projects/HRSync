@@ -1,0 +1,48 @@
+﻿
+@model LoginRequestVM
+
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+    <div class="card anonymous-card px-4 py-5 d-flex justify-content-center align-items-center">
+        <div class="row">
+            <div class="col-12 col-md-6 p-4 d-flex justify-content-center align-items-center">
+                <img src="~/img/login-page-img.png" class="img-fluid w-100">
+            </div>
+            <div class="col-12 col-md-6 p-4 d-flex justify-content-center align-items-center">
+                <div class="flex-fill">
+                    <h5 class="card-title">Login</h5>
+                    <form method="post">
+                        <div class="form-group mt-3">
+                            <label asp-for="Email">Email</label>
+                            <input asp-for="Email" type="email" class="form-control" id="username" placeholder="Enter email address">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label asp-for="Password">Password</label>
+                            <input asp-for="Password" type="password" class="form-control" id="password" placeholder="Enter password">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="checkbox mt-3 mb-1">
+                            <label asp-for="RememberMe" class="form-label">
+                                <input asp-for="RememberMe" class="form-check-input" />
+                                Remember me
+                            </label>
+                        </div>
+                        <div>
+                            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                        </div>
+                        <div>
+                            <button id="login-submit" type="submit" class="btn btn-primary mt-3 w-100">Login</button>
+                        </div>
+                        <div>
+                            <p class="m-0 text-muted fs-8rem mt-2">
+                                Haven't create an account?
+                                <a class="text-decoration-none" asp-action="Register">Click here</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

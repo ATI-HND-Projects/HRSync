@@ -1,7 +1,18 @@
+using DataAccessLayer;
+using AuthLayer;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Confiqure Auth, DataAcces and Service Layers services
+builder.Services.ConfigureDataAccessServices(builder.Configuration);
+builder.Services.ConfigureAuthServices();
+
+// configure Automapper
+builder.Services.AddAutoMapper(typeof(Program));
+
 
 var app = builder.Build();
 
@@ -19,6 +30,11 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "login",
+    pattern: "",
+    defaults: new {controller = "Account", action = "Login"});
 
 app.MapControllerRoute(
     name: "default",

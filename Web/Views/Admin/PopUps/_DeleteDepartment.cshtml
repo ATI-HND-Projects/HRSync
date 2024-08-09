@@ -1,0 +1,6 @@
+﻿@model DepartmentVM
+
+<form asp-controller="Admin" asp-action="DeleteDepartment" method="post">
+    <input asp-for="DepartmentId" type="hidden" />
+    <p class="fs-6">Are you sure you want to delete @Model.Name department ?</p>
+</form> 

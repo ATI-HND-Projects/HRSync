@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{D63EF32A-46E0-40BB-A953-E44DB30A4294}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web\Web.csproj", "{D63EF32A-46E0-40BB-A953-E44DB30A4294}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthLayer", "AuthLayer\AuthLayer.csproj", "{6B2B7890-856D-4252-97A8-0257494BB711}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{9E020159-605D-4816-A80B-46EB7E766F2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{D63EF32A-46E0-40BB-A953-E44DB30A4294}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D63EF32A-46E0-40BB-A953-E44DB30A4294}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D63EF32A-46E0-40BB-A953-E44DB30A4294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B2B7890-856D-4252-97A8-0257494BB711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B2B7890-856D-4252-97A8-0257494BB711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B2B7890-856D-4252-97A8-0257494BB711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B2B7890-856D-4252-97A8-0257494BB711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E020159-605D-4816-A80B-46EB7E766F2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E020159-605D-4816-A80B-46EB7E766F2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E020159-605D-4816-A80B-46EB7E766F2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E020159-605D-4816-A80B-46EB7E766F2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
